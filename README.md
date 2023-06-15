@@ -49,7 +49,7 @@
 <details>
   <summary>Redux</summary>
   <ul>
-    <li><a href="https://redux-toolkit.js.org/">ReactJS</a></li>
+    <li><a href="https://redux-toolkit.js.org/">Redux</a></li>
   </ul>
 </details>
 
