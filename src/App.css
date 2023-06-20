@@ -264,3 +264,20 @@ nav ul li a {
   font-weight: bold;
   margin-left: -9rem;
 }
+
+#catButton {
+  font-size: 18px;
+  width: 15%;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgb(25, 173, 192);
+  color: #fff;
+  border: none;
+  height: 40px;
+  margin-left: 0;
+  margin-top: 5rem;
+}
+
+#catButton:hover {
+  cursor: pointer;
+}

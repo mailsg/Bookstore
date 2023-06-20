@@ -2,14 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import '../App.css';
 
-const Book = ({ book }) => (
-  <div key={book.title} className="book-section-one">
+const Book = ({
+  title, author, genre,
+}) => (
+  <div key={title} className="book-section-one">
     <div className="genre-section">
-      <span>{book.genre}</span>
+      <span>{genre}</span>
       <div className="book-title">
-        <h2>{book.title}</h2>
+        <h2>{title}</h2>
       </div>
-      <p>{book.author}</p>
+      <p>{author}</p>
       <div className="updatebook">
         <button type="button" id="comment">Comment</button>
         <div className="left-section-1" />
@@ -32,7 +34,7 @@ const Book = ({ book }) => (
         </svg>
       </div>
       <div className="output">
-        <h3>{book.percentage}</h3>
+        <h3>64%</h3>
         <span>Completed</span>
       </div>
     </div>
@@ -40,7 +42,7 @@ const Book = ({ book }) => (
 
     <div className="update-progress">
       <span>Current Chapter</span>
-      <h4>{book.chapter}</h4>
+      <h4>Chapter 17</h4>
 
       <button type="button">Update Progress</button>
 
@@ -49,13 +51,9 @@ const Book = ({ book }) => (
 );
 
 Book.propTypes = {
-  book: PropTypes.shape({
-    genre: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    author: PropTypes.string.isRequired,
-    chapter: PropTypes.string.isRequired,
-    percentage: PropTypes.string.isRequired,
-  }).isRequired,
+  title: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+  genre: PropTypes.string.isRequired,
 };
 
 export default Book;
