@@ -40,8 +40,8 @@ const Book = ({ book }) => {
           }}
         >
           <svg>
-            <circle cx={70} cy={70} r={70} />
-            <circle cx={70} cy={70} r={70} />
+            <circle cx={70} cy={70} r={30} />
+            <circle cx={70} cy={70} r={30} />
           </svg>
         </div>
         <div className="output">
