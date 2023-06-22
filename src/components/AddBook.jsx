@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { v4 as uuidv4 } from 'uuid';
 import { addBook } from '../redux/books/booksSlice';
 import '../App.css';
 
@@ -10,13 +9,13 @@ const AddBook = () => {
   const [author, setAuthor] = useState('');
   const [category, setCategory] = useState('Action');
 
-  const handleAddBook = () => {
+  const handleAddBook = async () => {
     if (title.trim() === '' || author.trim() === '') {
       return;
     }
     dispatch(
       addBook({
-        id: uuidv4(),
+        item_id: Date.now().toString(),
         title,
         author,
         category,

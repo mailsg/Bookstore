@@ -1,25 +1,28 @@
+/* eslint-disable camelcase */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { removeBook } from '../redux/books/booksSlice';
 import '../App.css';
 
-const Book = ({
-  id, title, author, category,
-}) => {
+const Book = ({ book }) => {
   const dispatch = useDispatch();
-  const handleRemoveBook = () => {
-    dispatch(removeBook(id));
+  const handleRemoveBook = async () => {
+    dispatch(removeBook(book.item_id));
   };
 
+  // if (!book) {
+  //   return null;
+  // }
+
   return (
-    <div key={id} className="book-section-one">
+    <div key={book.item_id} className="book-section-one">
       <div className="genre-section">
-        <span>{category}</span>
+        <span>{book.category}</span>
         <div className="book-title">
-          <h2>{title}</h2>
+          <h2>{book.title}</h2>
         </div>
-        <p>{author}</p>
+        <p>{book.author}</p>
         <div className="updatebook">
           <button type="button" id="comment">Comment</button>
           <div className="left-section-1" />
@@ -60,10 +63,12 @@ const Book = ({
 };
 
 Book.propTypes = {
-  id: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  author: PropTypes.string.isRequired,
-  category: PropTypes.string.isRequired,
+  book: PropTypes.shape({
+    item_id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default Book;
